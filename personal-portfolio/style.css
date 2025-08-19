@@ -1,0 +1,292 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background: #f9f9f9;
+  color: #333;
+}
+
+/* Navbar */
+header {
+  background: #222;
+  color: #fff;
+  padding: 15px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+}
+
+.nav-links li {
+  margin-left: 20px;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #00adb5;
+}
+
+/* Hero Section */
+/* Hero Section */
+.hero {
+  height: 100vh;
+  background: linear-gradient(135deg, #1e1e1e, #2a2a2a); /* same as About */
+  color: #f9d423; /* yellow text */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+  color: #f9d423; /* yellow */
+}
+
+.hero h2 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: #f9d423; /* yellow */
+}
+
+.hero-tagline {
+  color: #f9d423; /* yellow */
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+/* Button style (unchanged) */
+.btn {
+  display: inline-block;
+  background: #00adb5;
+  color: #fff;
+  padding: 10px 20px;
+  margin: 10px;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background: #007f85;
+}
+
+
+/* About Section */
+.about {
+  background: linear-gradient(135deg, #1e1e1e, #2a2a2a); /* same background as hero */
+  padding: 60px 20px;
+  text-align: center;
+  color: #f9d423; /* yellow text */
+}
+
+.about h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #f9d423; /* yellow */
+}
+
+.profile-image {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  margin: 20px 0;
+  border: 3px solid #f9d423; /* yellow border */
+  object-fit: cover;
+}
+
+.about .about-text {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #f9d423; /* yellow */
+}
+
+.about .highlight {
+  font-weight: bold;
+  color: #ffeb3b; /* brighter yellow for skills */
+}
+
+
+/* Skills Grid */
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.skill-box {
+  width: 120px;
+  height: 120px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid #f9d423;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #f9d423;
+  transition: transform 0.3s;
+  padding: 10px;
+}
+
+.skill-box img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+.skill-box span {
+  font-size: 1rem;
+  text-align: center;
+}
+
+.skill-box:hover {
+  transform: scale(1.1);
+}
+
+
+.projects {
+  padding: 60px 20px;
+  text-align: center;
+  background: linear-gradient(135deg, #1e1e1e, #2a2a2a);
+  overflow: hidden;
+}
+
+.projects-container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.projects-slider {
+  display: flex;
+  gap: 20px;
+  animation: scroll-bounce 20s linear infinite;
+}
+
+.project-card {
+  position: relative;
+  width: 8cm;
+  height: 10cm;
+  flex-shrink: 0;
+  background: #333;
+  background-size: cover;
+  background-position: center;
+  border-radius: 12px;
+  border: 4px solid #f9d423; /* yellow border */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+  transform: scale(1.05);
+}
+
+.project-card .overlay {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 55%;
+  background: rgba(0,0,0,0.75);
+  color: #fff;
+  padding: 15px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card .overlay h3 {
+  margin: 0;
+  font-size: 20px;
+  color: #f9d423;
+}
+
+.project-card .overlay p {
+  margin: 8px 0 0;
+  font-size: 15px;
+  line-height: 1.4;
+}
+
+/* 🔥 Bounce effect */
+@keyframes scroll-bounce {
+  0%   { transform: translateX(0); }
+  90%  { transform: translateX(-50%); }
+  95%  { transform: translateX(-52%); } /* bounce overshoot */
+  100% { transform: translateX(0); }    /* reset smoothly */
+}
+
+
+/* Contact */
+form input, form textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+form button {
+  background: #00adb5;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+form button:hover {
+  background: #007f85;
+}
+
+/* Footer */
+footer {
+  background: #222;
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 20px;
+}
+
+/* Scroll to top */
+.scroll-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #00adb5;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: 50%;
+  font-size: 18px;
+  cursor: pointer;
+  display: none;
+}
